@@ -1,4 +1,4 @@
-import api from './api.js';
+import api from './api.js'
 import 'dotenv/config'
 
 const PORT = process.env.PORT || 3001

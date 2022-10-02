@@ -7,4 +7,4 @@ api.use(express.json())
 api.use(expressSanitizer())
 api.use('/', router)
 
-export default api;
+export default api
