@@ -1,5 +1,5 @@
 describe('/users/', () => {
-  test("'login' should return { status: 400 } when not sending { username } param", async () => {
+  test("'login' should return { status: 422 } when not sending { username } param", async () => {
     await fetch('http://localhost:3000/users/login', {
       method: 'POST',
       mode: 'cors',
@@ -8,9 +8,9 @@ describe('/users/', () => {
       },
       body: JSON.stringify({ password: 'admin' })
     })
-      .then(res => expect(res.status).toBe(400))
+      .then(res => expect(res.status).toBe(422))
   })
-  test("'login' should return { status: 400 } when not sending { password } param", async () => {
+  test("'login' should return { status: 422 } when not sending { password } param", async () => {
     await fetch('http://localhost:3000/users/login', {
       method: 'POST',
       mode: 'cors',
@@ -19,7 +19,7 @@ describe('/users/', () => {
       },
       body: JSON.stringify({ username: 'admin' })
     })
-      .then(res => expect(res.status).toBe(400))
+      .then(res => expect(res.status).toBe(422))
   })
   test("'login' should return { status: 401 } when incorrect 'password' or 'username'", async () => {
     await fetch('http://localhost:3000/users/login', {

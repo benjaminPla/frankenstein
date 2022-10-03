@@ -1,4 +1,4 @@
-import { Sequelize, Model, DataTypes } from 'sequelize'
+import { Sequelize, DataTypes } from 'sequelize'
 import { createClient } from 'redis'
 import bcrypt from 'bcrypt'
 import 'dotenv/config'

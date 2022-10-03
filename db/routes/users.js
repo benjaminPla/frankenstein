@@ -69,7 +69,7 @@ usersRouter.post('/register', missingUsername, missingPassword, async (req, res)
 
 usersRouter.post('/login', missingUsername, missingPassword, async (req, res) => {
   const { username, password } = req.body
-  const userMatch = await User.findOne({ where: { username } })
+  await User.findOne({ where: { username } })
     .then(async (data) => {
       const passMatch = bcrypt.compareSync(password, data.dataValues.password)
       if (!passMatch) {
